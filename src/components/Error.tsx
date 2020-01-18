@@ -6,14 +6,11 @@ const ErrorContainer = styled.div`
   opacity: 0.8;
 `;
 
-const Error: React.FC<{ msg: string; retry: () => void }> = ({
-  msg,
-  retry
-}) => {
+const Error: React.FC<{ msg: string }> = ({ msg }) => {
   return (
     <ErrorContainer>
       <p>{msg}</p>
-      <button onClick={retry}>Please try again</button>
+      <button>Please try reload the page.</button>
     </ErrorContainer>
   );
 };

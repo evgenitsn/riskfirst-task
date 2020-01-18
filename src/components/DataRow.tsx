@@ -6,7 +6,7 @@ const DataRow: React.FC<{ item: any }> = ({ item }) => {
   const { id, name, description } = item;
   const history = useHistory();
   return (
-    <tr onClick={() => history.push(`details/${id}`)}>
+    <tr onClick={() => history.push(`/details/${id}`)}>
       <td>{name}</td>
       <td>{description}</td>
     </tr>

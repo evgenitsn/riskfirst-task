@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Home, Details } from './screens/index';
+import { Home, Details, NoMatch } from './screens/index';
 import { Header } from './components/index';
 
 const Routes: React.FC = () => {
@@ -9,11 +9,14 @@ const Routes: React.FC = () => {
       <Header />
       <main>
         <Switch>
-          <Route path='/details/:id'>
+          <Route path='/details/:id' exact>
             <Details />
           </Route>
-          <Route path='/'>
+          <Route path='/' exact>
             <Home />
+          </Route>
+          <Route path='*'>
+            <NoMatch />
           </Route>
         </Switch>
       </main>
