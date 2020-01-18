@@ -7,15 +7,15 @@ import {
 
 // TODO: FIX TYPES
 type State = {
-  businesses: Array<Object>;
+  data: Array<Object>;
   loading: Boolean;
   error: Object;
 };
 
-type Action = { type: string; payload: number };
+type Action = { type: string; payload: any };
 
 const initialState = {
-  businesses: [],
+  data: [],
   loading: true,
   error: {}
 };
@@ -25,11 +25,11 @@ export default (state: State = initialState, action: Action) => {
     case FETCH_SINGLE_BUSINESS:
       return state;
     case FETCH_ALL_BUSINESSES:
-      return state;
+      return { ...state, data: action.payload.clients };
     case LOADING:
-      return state;
+      return { ...state, loading: action.payload };
     case ERROR:
-      return state;
+      return { ...state, error: action.payload };
     default:
       return state;
   }
