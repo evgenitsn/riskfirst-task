@@ -2,6 +2,15 @@
 
 RiskFirst React &amp; Redux Task
 
+### Used Tech Stack:
+
+- React
+- Redux
+- redux-thunk
+- react-router
+- typescript
+- styled-components
+
 ## Available Scripts
 
 In the project directory, you can run:
