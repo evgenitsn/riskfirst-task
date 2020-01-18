@@ -1,7 +1,20 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Home, Details } from './screens/index'
 
 const App: React.FC = () => {
-  return <h1>RiskFirst</h1>
+  return (
+    <Router>
+      <Switch>
+        <Route path='/details'>
+          <Details />
+        </Route>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App
