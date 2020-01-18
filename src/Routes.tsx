@@ -1,7 +1,7 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Home, Details } from './screens/index'
-import { Header } from './components/index'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Home, Details } from './screens/index';
+import { Header } from './components/index';
 
 const Routes: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Routes: React.FC = () => {
         </Switch>
       </main>
     </Router>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;
