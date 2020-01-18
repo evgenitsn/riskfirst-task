@@ -9,8 +9,8 @@ const Home: React.FC = () => {
     <div>
       {loading ? (
         <Loading />
-      ) : error ? (
-        <Error msg={error || 'Default error'} />
+      ) : error.displayMsg ? (
+        <Error error={error} />
       ) : (
         <DataTable data={data} />
       )}

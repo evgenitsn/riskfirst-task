@@ -1,35 +1,26 @@
-import {
-  FETCH_SINGLE_BUSINESS,
-  FETCH_ALL_BUSINESSES,
-  LOADING,
-  ERROR
-} from '../constants/types';
+import { Actions, State } from './types';
+import { FETCH_ALL_BUSINESSES, LOADING, ERROR } from '../constants/actionTypes';
 
-// TODO: FIX TYPES
-type State = {
-  data: Array<Object>;
-  loading: Boolean;
-  error: string;
-};
-
-type Action = { type: string; payload: any };
-
-const initialState = {
+const initialState: State = {
   data: [],
   loading: true,
-  error: ''
+  error: {
+    displayMsg: '',
+    error: {}
+  }
 };
 
-export default (state: State = initialState, action: Action) => {
+export default (state: State = initialState, action: Actions): State => {
   switch (action.type) {
-    case FETCH_SINGLE_BUSINESS:
-      return state;
     case FETCH_ALL_BUSINESSES:
-      return { ...state, data: action.payload.clients };
+      return { ...state, data: action.payload };
     case LOADING:
       return { ...state, loading: action.payload };
     case ERROR:
-      return { ...state, error: action.payload };
+      return {
+        ...state,
+        error: action.payload
+      };
     default:
       return state;
   }

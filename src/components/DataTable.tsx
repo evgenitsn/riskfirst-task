@@ -1,8 +1,9 @@
 import React from 'react';
 import DataRow from './DataRow';
+import { DataArray } from '../reducers/types';
 import styled from 'styled-components/macro';
 
-const DataTable: React.FC<{ data: Array<any> }> = ({ data }) => {
+const DataTable: React.FC<{ data: DataArray }> = ({ data }) => {
   return (
     <table style={{ border: '1px solid pink' }}>
       <thead>

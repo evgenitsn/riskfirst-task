@@ -1,4 +1,3 @@
-export const FETCH_SINGLE_BUSINESS = 'FETCH_SINGLE_BUSINESS';
 export const FETCH_ALL_BUSINESSES = 'FETCH_ALL_BUSINESSES';
 export const LOADING = 'LOADING';
 export const ERROR = 'ERROR';
