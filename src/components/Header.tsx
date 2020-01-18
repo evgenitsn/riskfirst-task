@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   border: 1px solid lightblue;
 `
 const Title = styled.h1`

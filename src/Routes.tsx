@@ -7,14 +7,16 @@ const Routes: React.FC = () => {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route path='/details'>
-          <Details />
-        </Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
+      <main>
+        <Switch>
+          <Route path='/details'>
+            <Details />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </main>
     </Router>
   )
 }
