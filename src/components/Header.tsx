@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 const HeaderContainer = styled.header`
@@ -9,9 +10,10 @@ const Title = styled.h1`
 `;
 
 const Header: React.FC = () => {
+  const history = useHistory();
   return (
     <HeaderContainer>
-      <Title>Header Title</Title>
+      <Title onClick={() => history.push('/')}>Header Title</Title>
     </HeaderContainer>
   );
 };

@@ -9,7 +9,7 @@ import {
 type State = {
   data: Array<Object>;
   loading: Boolean;
-  error: Object;
+  error: string;
 };
 
 type Action = { type: string; payload: any };
@@ -17,7 +17,7 @@ type Action = { type: string; payload: any };
 const initialState = {
   data: [],
   loading: true,
-  error: {}
+  error: ''
 };
 
 export default (state: State = initialState, action: Action) => {

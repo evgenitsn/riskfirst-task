@@ -19,7 +19,7 @@ const error = (error: ErrorType) => ({
 export function fetchData() {
   return async (dispatch: any) => {
     dispatch(loading(true));
-    dispatch(error({}));
+    dispatch(error(''));
     const rawData = await fetch(API_URL);
     const jsonData = await rawData.json();
     dispatch(fetchAll(jsonData));

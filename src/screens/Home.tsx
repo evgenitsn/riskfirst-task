@@ -1,16 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from '../selectors/reduxSelectorUtil';
 import { fetchData } from '../actions/actions';
+import { DataTable, Loading, Error } from '../components';
 
 const Home: React.FC = () => {
-  const state: any = useSelector(state => state);
+  const { data, loading, error } = useSelector(state => state.businesses);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (data.length === 0) {
+      dispatch(fetchData());
+    }
+  }, [data.length, dispatch]);
 
   return (
     <div>
-      <Link to='/details'>Details</Link>
-      <button onClick={() => dispatch(fetchData())}>Add to count</button>
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        <Error
+          retry={() => dispatch(fetchData())}
+          msg={error || 'Default error'}
+        />
+      ) : (
+        <DataTable data={data} />
+      )}
     </div>
   );
 };

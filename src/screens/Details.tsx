@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const Details: React.FC = () => {
+const Details: React.FC = props => {
+  let { id } = useParams();
+
   return (
     <div>
-      <Link to='/'>Home</Link>
+      <div>{id}</div>
     </div>
   );
 };

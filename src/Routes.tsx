@@ -9,7 +9,7 @@ const Routes: React.FC = () => {
       <Header />
       <main>
         <Switch>
-          <Route path='/details'>
+          <Route path='/details/:id'>
             <Details />
           </Route>
           <Route path='/'>
