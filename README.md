@@ -2,6 +2,10 @@
 
 RiskFirst React &amp; Redux Task
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/210cba7d-6cc9-4aa7-8d72-6f19e1cd235f/deploy-status)](https://app.netlify.com/sites/riskfirst/deploys)
+
+Quick Preview: https://riskfirst.netlify.com
+
 ### Used Tech Stack:
 
 - React
