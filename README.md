@@ -11,6 +11,10 @@ RiskFirst React &amp; Redux Task
 - typescript
 - styled-components
 
+### About the businesses images
+
+The service that is used for the images is responding relatively slow so I ended up adding a library that handles slow loads as it loads a local placeholder image on the same place that we are expecting to receive the network image. So initially we see the placeholder in the moment that the image is loaded from the 3th party provider (~2secs) it will replace the placeholder image.
+
 ## Available Scripts
 
 In the project directory, you can run:
