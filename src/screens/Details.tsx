@@ -1,16 +1,36 @@
 import React from 'react';
-import useLoadInitialData from '../hooks/useLoadInitialData';
+import ReactImageFallback from 'react-image-fallback';
+import { useHistory, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import placeholder from '../assets/placeholder.png';
 import {
-  Loading,
-  Error,
   DetailsAddress,
   DetailsContact,
-  DetailsNearbyPlaces
+  DetailsNearbyPlaces,
+  Error,
+  Loading
 } from '../components';
-import { useParams, useHistory } from 'react-router-dom';
-import { DataItem, DataArray } from '../reducers/types';
+import useLoadInitialData from '../hooks/useLoadInitialData';
+import { DataArray, DataItem } from '../reducers/types';
 
-const Details: React.FC = props => {
+const HeroImage = styled(ReactImageFallback)`
+  height: 300px;
+  object-fit: cover;
+`;
+
+const DetailsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+`;
+
+const DetailsSection = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+`;
+
+const Details: React.FC = () => {
   const { id } = useParams();
   const history = useHistory();
 
@@ -28,20 +48,31 @@ const Details: React.FC = props => {
 
   if (detailsData) {
     return (
-      <div>
+      <>
         {loading ? (
           <Loading />
         ) : error.displayMsg ? (
           <Error error={error} />
         ) : (
           <>
-            <img src={detailsData.image} alt='Business' />
-            <DetailsAddress data={detailsData} />
-            <DetailsContact data={detailsData} />
-            <DetailsNearbyPlaces nearbyBusinesses={nearbyBusinesses} />
+            <HeroImage
+              src={detailsData.image}
+              fallbackImage={placeholder}
+              initialImage={placeholder}
+              alt='Business Image'
+            />
+            <DetailsContainer>
+              <DetailsSection>
+                <DetailsAddress data={detailsData} />
+                <DetailsContact data={detailsData} />
+              </DetailsSection>
+              <DetailsSection>
+                <DetailsNearbyPlaces nearbyBusinesses={nearbyBusinesses} />
+              </DetailsSection>
+            </DetailsContainer>
           </>
         )}
-      </div>
+      </>
     );
   } else {
     return null;

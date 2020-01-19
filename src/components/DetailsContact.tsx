@@ -1,14 +1,14 @@
 import React from 'react';
 import { DataItem } from '../reducers/types';
-import styled from 'styled-components/macro';
+import { SectionTitle, SectionContainer } from './styled';
 
 const DetailsContact: React.FC<{ data: DataItem }> = ({ data }) => {
   const { phone, email } = data;
   return (
     <div>
-      <h2>Contact</h2>
-      <div>{phone}</div>
-      <div>{email}</div>
+      <SectionTitle>Contact</SectionTitle>
+      <SectionContainer>{phone}</SectionContainer>
+      <SectionContainer>{email}</SectionContainer>
     </div>
   );
 };

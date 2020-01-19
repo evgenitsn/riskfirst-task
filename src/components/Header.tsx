@@ -1,19 +1,27 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import logo from '../assets/logo.png';
 
 const HeaderContainer = styled.header`
-  border: 1px solid lightblue;
+  background-color: #ffffff;
+  box-shadow: 2px 0px 12px 0px #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-const Title = styled.h1`
-  text-align: center;
+
+const Logo = styled.img`
+  margin: 20px;
+  height: 50px;
 `;
 
 const Header: React.FC = () => {
-  const history = useHistory();
   return (
     <HeaderContainer>
-      <Title onClick={() => history.push('/')}>Header Title</Title>
+      <Link to='/'>
+        <Logo src={logo} />
+      </Link>
     </HeaderContainer>
   );
 };

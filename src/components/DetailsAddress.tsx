@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataItem } from '../reducers/types';
-import styled from 'styled-components/macro';
+import { SectionTitle, SectionContainer } from './styled';
 
 const DetailsAddress: React.FC<{ data: DataItem }> = ({ data }) => {
   const {
@@ -8,13 +8,18 @@ const DetailsAddress: React.FC<{ data: DataItem }> = ({ data }) => {
   } = data;
   return (
     <div>
-      <h2>Address</h2>
-      <div>
-        {number} {street}
-      </div>
-      <div>
-        {city} {country} {zip}
-      </div>
+      <SectionTitle>Address</SectionTitle>
+      <SectionContainer>
+        <span>{number} </span>
+        <span>{street}</span>
+      </SectionContainer>
+      <SectionContainer>
+        <span>{city} </span>
+        <span>{country} </span>
+      </SectionContainer>
+      <SectionContainer>
+        <span>{zip}</span>
+      </SectionContainer>
     </div>
   );
 };

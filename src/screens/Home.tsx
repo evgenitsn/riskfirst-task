@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   const { data, loading, error } = useLoadInitialData();
 
   return (
-    <div>
+    <>
       {loading ? (
         <Loading />
       ) : error.displayMsg ? (
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
       ) : (
         <DataTable data={data} />
       )}
-    </div>
+    </>
   );
 };
 
